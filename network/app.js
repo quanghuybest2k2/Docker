@@ -4,6 +4,12 @@ const app = express();
 
 const API_URL = "https://vn-public-apis.fpo.vn";
 
+app.get("/", (req, res) => {
+  const html =
+    "<a href='/provinces'><button>Xem Tỉnh</button></a><a href='/districts'><button>Xem Huyện/Quận</button></a>";
+  res.send(html);
+});
+
 app.get("/provinces", async (req, res) => {
   try {
     const response = await axios.get(API_URL + "/provinces/getAll?limit=-1");
