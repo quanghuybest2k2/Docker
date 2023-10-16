@@ -1,0 +1,59 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Hệ thống ATM - 2015597</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <div class="ion-text-center">
+    <h1 size="large">Đăng nhập</h1>
+  </div>
+
+  <!-- Form đăng nhập -->
+  <form (ngSubmit)="login()">
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input
+        placeholder="Nhập email...."
+        [(ngModel)]="formData.email"
+        name="email"
+        type="text"
+      ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Mật khẩu</ion-label>
+      <ion-input
+        placeholder="Nhập mật khẩu..."
+        [(ngModel)]="formData.password"
+        name="password"
+        type="password"
+      ></ion-input>
+    </ion-item>
+
+    <ion-button expand="full" type="submit">Đăng nhập</ion-button>
+  </form>
+  <ion-list>
+    <ion-button
+      expand="full"
+      color="warning"
+      (click)="addAccount()"
+      class="ion-margin-top"
+      >Thêm</ion-button
+    >
+    <ion-button
+      expand="full"
+      color="danger"
+      (click)="deleteAccount()"
+      class="ion-margin-top ion-margin-bottom"
+      >Xóa</ion-button
+    >
+    <ion-button
+      expand="full"
+      color="success"
+      (click)="loadAccounts()"
+      class="ion-margin-bottom"
+      >Xem tất cả</ion-button
+    >
+  </ion-list>
+</ion-content>
